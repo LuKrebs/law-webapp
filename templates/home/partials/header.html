@@ -1,0 +1,25 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row mdl-color--white">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ default_alt_image() }}" class="logo-header">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ default_alt_image() }}" class="logo-sidebar"></a>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="{{ url_for('home') }}">Início</a>
+      <a class="mdl-navigation__link" href="{{ url_for('about_us') }}">Sobre nós</a>
+      <a class="mdl-navigation__link" href="{{ url_for('team') }}">Equipe</a>
+      <a class="mdl-navigation__link" href="{{ url_for('areas') }}">Áreas de atuação</a>
+      <a class="mdl-navigation__link" href="{{ url_for('links') }}">Links úteis</a>
+      <a class="mdl-navigation__link" href="{{ url_for('contact') }}">Contato</a>
+    </nav>
+  </div>
+</div>

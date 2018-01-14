@@ -1,0 +1,8 @@
+{% extends "home/base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <img src="{{ url_for('static', filename='img/home.jpg') }}" alt="{{ default_alt_image() }}" class="carousel-image">
+{% endblock %}

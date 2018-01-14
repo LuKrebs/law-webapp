@@ -1,0 +1,23 @@
+.logo-header {
+    width: 236px;
+}
+.logo-sidebar {
+    width: 210px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.carousel-image {
+    width: 100%;
+    margin-top: 72px;
+    min-height: 164px;
+}
+.mdl-layout__header-row {
+    height: 72px;
+}
+.mdl-layout__drawer-button {
+    margin: 10px 4px !important;
+}
+.mdl-layout__drawer-button {
+    background-color: white !important;
+    color: #d32f2f !important;
+}
