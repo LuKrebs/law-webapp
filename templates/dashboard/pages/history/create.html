@@ -1,0 +1,29 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Create About us| Laracunha {% endblock %}
+
+{% block content %}
+    <h1 class="center-text title-text">Create Sobre nós</h1>
+
+    {% include 'partials/_flashed_messages.html' %}
+
+    <div class="mdl-grid">
+        <div class="round-form mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop mdl-color--white">
+            <form action="{{ url_for('create_history') }}" method="POST">
+                {{ form.hidden_tag() }}
+
+                {% from "partials/_formhelpers.html" import render_field_full_with %}
+                <div class="mdl-grid">
+                    {{ render_field_full_with(form.office_name) }}
+                    {{ render_field_full_with(form.short_description) }}
+                    {{ render_field_full_with(form.complete_description) }}
+                    {% with button_action='submit', button_text='CREATE' %}
+                        {% include 'partials/_button.html' %}
+                    {% endwith %}
+                    {% include 'partials/_error.html' %}
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

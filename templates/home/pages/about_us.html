@@ -1,0 +1,15 @@
+{% extends "home/base.html" %}
+
+{% block title %}Sobre nós{% endblock %}
+
+{% block content %}
+    {% include 'home/partials/_carousel_image.html' %}
+
+    {% with subheader='SOBRE NÓS' %}
+        {% include 'home/partials/_subheader.html' %}
+    {% endwith %}
+
+    {% include 'home/partials/_short_description.html' %}
+    {% include 'home/partials/_image_section.html' %}
+    {% include 'home/partials/_complete_description.html' %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1 class="center-text title-text">Bem vindo, {{ user.fullname }}</h1>
+    {% include 'dashboard/partials/_list_option.html' %}
+{% endblock %}

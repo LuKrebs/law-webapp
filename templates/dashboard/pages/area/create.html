@@ -1,0 +1,28 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Create Area | Laracunha {% endblock %}
+
+{% block content %}
+    <h1 class="center-text title-text">Create Area</h1>
+
+    {% include 'partials/_flashed_messages.html' %}
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-cell--2-offset-tablet mdl-cell--4-col-desktop mdl-cell--4-offset-desktop">
+            <form action="{{ url_for('create_area') }}" method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+
+                {% from "partials/_formhelpers.html" import render_field, render_image_field %}
+                <div class="mdl-grid">
+                    {{ render_field(form.name) }}
+                    {{ render_image_field(form.image) }}
+                    {% with button_action='submit', button_text='CREATE' %}
+                        {% include 'partials/_button.html' %}
+                    {% endwith %}
+                    {% include 'partials/_error.html' %}
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

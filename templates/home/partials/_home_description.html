@@ -1,0 +1,6 @@
+{% if history %}
+    {% with subheader=history.office_name %}
+        {% include 'home/partials/_subheader.html' %}
+    {% endwith %}
+    {% include 'home/partials/_text_description.html' %}
+{% endif %}

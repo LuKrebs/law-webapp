@@ -1,3 +1,28 @@
+/* GLOBAL */
+*, body {
+    font-family: Roboto;
+}
+.center-text {
+    text-align: center;
+}
+.justify-text {
+    text-align: justify;
+}
+.round-form {
+    border-radius: 4px;
+}
+.title-text {
+    font-size: 40px;
+}
+.subheader-text {
+    font-size: 24px;
+}
+.floated-link {
+    float: right;
+}
+
+
+/* HOME */
 .logo-header {
     width: 236px;
 }
@@ -8,9 +33,15 @@
 }
 .carousel-image {
     width: 100%;
-    margin-top: 72px;
-    min-height: 164px;
+    min-height: 264px;
 }
+.image-centralized {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* OVERWRITTEN MATERIAL STYLE */
 .mdl-layout__header-row {
     height: 72px;
 }
@@ -19,5 +50,39 @@
 }
 .mdl-layout__drawer-button {
     background-color: white !important;
-    color: #d32f2f !important;
+    color: #c62828 !important;
+}
+.mdl-layout__header-row .mdl-navigation__link {
+    color: rgb(0,0,0) !important;
+}
+
+
+/* LOGIN */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* ABOUT US */
+.about-us-image {
+    width: 100%;
+    height: 264px;
+}
+.more-about-us-link {
+    position: relative;
+}
+.more-about-us-icon {
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+    font-size: 20px;
 }

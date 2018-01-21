@@ -1,0 +1,8 @@
+<div class="mdl-grid">
+    <div class="mdl-cell--4-col-phone mdl-cell--6-col-tablet mdl-cell--1-offset-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop justify-text">
+        <p>{{ history.get_short_description()|markdown }}</p>
+    </div>
+    <div class="mdl-cell--4-col-phone mdl-cell--6-col-tablet mdl-cell--1-offset-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+        <a href="{{ url_for('about_us') }}" class="floated-link more-about-us-link"><i class="material-icons more-about-us-icon">add</i> Sobre nós</a>
+    </div>
+</div>

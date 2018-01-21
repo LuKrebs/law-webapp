@@ -1,0 +1,25 @@
+{% extends "home/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="wrapper mdl-color--red-700">
+    <div class="mdl-grid">
+        <div class="round-form mdl-cell mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-cell--2-offset-tablet mdl-cell--6-col-desktop mdl-cell--3-offset-desktop mdl-color--white">
+            <form action="{{ url_for('admin') }}" method="POST">
+                {{ form.hidden_tag() }}
+
+                {% from "partials/_formhelpers.html" import render_field %}
+                <div class="mdl-grid">
+                    {{ render_field(form.email) }}
+                    {{ render_field(form.password) }}
+                    {% with button_action='submit', button_text='LOGIN' %}
+                        {% include 'partials/_button.html' %}
+                    {% endwith %}
+                    {% include 'partials/_error.html' %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
