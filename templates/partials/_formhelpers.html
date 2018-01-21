@@ -1,0 +1,68 @@
+{% macro render_field(field) %}
+    <div class="mdl-cell mdl-cell--12-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            {{ field.label(class='mdl-textfield__label')|safe }}
+            {{ field(class='mdl-textfield__input')|safe }}
+        </div>
+
+        {% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+
+{% macro render_field_full_with(field) %}
+    <div class="mdl-cell mdl-cell--12-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
+            {{ field.label(class='mdl-textfield__label')|safe }}
+            {{ field(class='mdl-textfield__input', rows='16')|safe }}
+        </div>
+
+        {% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro render_select_field(field) %}
+    <div class="mdl-selectfield mdl-js-selectfield">
+      <select id="{{ field.name }}" name="{{ field.name }}" class="mdl-selectfield__select">
+          {% for option in field.iter_choices() %}
+            <option value="{{ option[0] }}">{{ option[1].name }}</option>
+          {% endfor %}
+      </select>
+      <label class="mdl-selectfield__label" for="{{ field.name }}">{{ field.name.capitalize() }}</label>
+    </div>
+
+    {% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+
+{% macro render_image_field(field) %}
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        {{ field }}
+    </div>
+
+    {% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

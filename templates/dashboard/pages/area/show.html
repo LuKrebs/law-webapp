@@ -1,0 +1,20 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Area | Laracunha{% endblock %}
+
+{% block content %}
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop center-text">
+            <h1 class="center-text title-text">{{ area.name }}</h1>
+            <a href="{{ url_for('edit_area', area_id=area.id) }}">Editar</a>
+        </div>
+
+        {% include 'partials/_flashed_messages.html' %}
+
+        {% if area and area.image %}
+            {% with area=area %}
+                {% include 'dashboard/partials/_area_image.html' %}
+            {% endwith %}
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "home/base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    {% include 'home/partials/_carousel_image.html' %}
+
+    {% with history=history %}
+        {% include 'home/partials/_home_description.html' %}
+        {% include 'home/partials/_areas_of_expertise.html' %}
+    {% endwith %}
+
+{% endblock %}

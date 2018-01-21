@@ -1,0 +1,15 @@
+<div class="mdl-layout__drawer">
+    <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="{{ default_alt_image() }}" class="logo-sidebar"></a>
+    <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="{{ url_for('home') }}">Início</a>
+        <a class="mdl-navigation__link" href="{{ url_for('about_us') }}">Sobre nós</a>
+        <a class="mdl-navigation__link" href="{{ url_for('team') }}">Equipe</a>
+        <a class="mdl-navigation__link" href="{{ url_for('areas') }}">Áreas de atuação</a>
+        <a class="mdl-navigation__link" href="{{ url_for('links') }}">Links úteis</a>
+        <a class="mdl-navigation__link" href="{{ url_for('contact') }}">Contato</a>
+        {% if session.get('email') %}
+        <a class="mdl-navigation__link" href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a class="mdl-navigation__link" href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+    </nav>
+</div>

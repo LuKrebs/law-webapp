@@ -3,15 +3,19 @@ from flask import redirect, render_template, request, url_for, session
 
 from home.models import History, Lawyer, Link, Area, Description
 
+from helpers import get_history
+
 
 @app.route("/", methods=["GET"])
 def home():
-    return render_template('home/home.html')
+    history = get_history()
+    return render_template('home/pages/home.html', history=history)
 
 
 @app.route("/about-us", methods=["GET"])
 def about_us():
-    return "Sobre nós"
+    history = get_history()
+    return render_template('home/pages/about_us.html', history=history)
 
 
 @app.route("/team", methods=["GET"])

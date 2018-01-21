@@ -10,9 +10,8 @@ class User(db.Model):
     def __init__(self, fullname, email,  password, is_admin=False):
         self.fullname = fullname
         self.email = email
-        self.username = username
         self.password = password
         self.is_admin = is_admin
 
     def __repr__(self):
-        return '<User: {}>'.format(self.username)
+        return '<User: {}>'.format(self.fullname)
